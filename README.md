@@ -5,11 +5,11 @@ To write a program to perform linear search and binary search using python progr
 1.	Hardware – PCs
 2.	Anaconda – Python 3.7 Installation / Moodle-Code Runner
 ## Algorithm:
-## Linear Search:
+### Linear Search:
 1.	Start from the leftmost element of array[] and compare k with each element of array[] one by one.
 2.	If k matches with an element in array[] , return the index.
 3.	If k doesn’t match with any of elements in array[], return -1 or element not found.
-## Binary Search:
+### Binary Search:
 1.	Set two pointers low and high at the lowest and the highest positions respectively.
 2.	Find the middle element mid of the array ie. arr[(low + high)/2]
 3.	If x == mid, then return mid.Else, compare the element to be searched with m.
@@ -17,34 +17,104 @@ To write a program to perform linear search and binary search using python progr
 5.	Else, compare x with the middle element of the elements on the left side of mid. This is done by setting high to high = mid - 1.
 6.	Repeat steps 2 to 5 until low meets high
 ## Program:
-i)	#Use a linear search method to match the item in a list.
+i)	# Use a linear search method to match the item in a list.
 ```
-
-
+''' 
+Program for linear search method to match the item in a list
+Developed by:Pradeep Raj P
+RegisterNumber: 212222240073
+'''
+def linearSearch(array,n,k):
+    for i in range(0,n):
+        if (array[i]==k):
+            return i
+    return -1
+array = eval(input())
+k = eval(input()) 
+n=len(array)
+array.sort()
+result = linearSearch(array,n,k)
+# use the function for linear search
+if(result==-1):
+    print(array)
+    print('Element not found')
+else:
+    print(array)
+    print('Element found at index: ',result)
 
 ```
 ii)	# Find the element in a list using Binary Search(Iterative Method).
 ```
-
-
-
-
-
+''' 
+Program to find the element in a list using Binary Search(Iterative Method)..
+Developed by:Pradeep Raj P
+RegisterNumber: 212222240073
+'''
+def binarySearchIter(array, k, low, high):
+    # Write your code here to find the middle value and check if the desired item is above or below the middle value
+    while low<=high:
+        mid=low+(high-low)
+        if array[mid]==k:
+            return mid
+        elif array[mid]<k:
+            low=mid+1
+        else:
+            high=mid-1
+    return -1
+array = eval(input())
+array.sort()
+k = eval(input())
+result=binarySearchIter(array,k,0,len(array)-1)
+if(result==-1):
+    print(array)
+    print('Element not found')
+else:
+    print(array)
+    print('Element found at index: ',result)
+    
 ```
 iii)	# Find the element in a list using Binary Search (recursive Method).
 ```
-
-
-
-
+''' 
+Program to find the element in a list using Binary Search(Iterative Method)..
+Developed by:Pradeep Raj P
+RegisterNumber: 212222240073
+'''
+def binarySearch(array, k, low, high):
+    # Write your code here to find the middle value and check if the desired item is above or below the middle value
+    while low<=high:
+        mid=low+(high-low)
+        if array[mid]==k:
+            return mid
+        elif array[mid]<k:
+            low=mid+1
+        else:
+            high=mid-1
+    return -1
+array = eval(input())
+array.sort()
+k = eval(input())
+result=binarySearch(array,k,0,len(array)-1)
+if(result==-1):
+    print(array)
+    print('Element not found')
+else:
+    print(array)
+    print('Element found at index: ',result)
 
 ```
 ## Sample Input and Output
 
+![Screenshot (74)](https://github.com/Pradeeppachiyappan/Search-Algorithm/assets/118707347/7ebef017-e9e2-45f3-af58-a4bc8f349b91)
 
+## output
 
-
-
+### output 1:
+![Screenshot (75)](https://github.com/Pradeeppachiyappan/Search-Algorithm/assets/118707347/3ae578a9-e1b9-47d5-85ee-bb493e605bd2)
+### output 2:
+![Screenshot (76)](https://github.com/Pradeeppachiyappan/Search-Algorithm/assets/118707347/f434aef0-bf91-444d-ae97-0fb4a88cf487)
+### output 3:
+![Screenshot (77)](https://github.com/Pradeeppachiyappan/Search-Algorithm/assets/118707347/c2ca8d27-4449-4d2f-8213-189461937c58)
 
 ## Result
 Thus the linear search and binary search algorithm is implemented using python programming.
